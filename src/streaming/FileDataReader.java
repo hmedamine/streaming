@@ -3,15 +3,15 @@ package streaming;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class DataReader {
+public class FileDataReader implements ReadIo {
 	private String source;
 	  
-	  public DataReader(String source) {
+	  public FileDataReader(String source) {
 	    this.source = source;
 	  }
 
 
-	  private void read() { 
+	  public void read() { 
 	    try {
 	      String line ;
 	      BufferedReader file = new BufferedReader(new FileReader(source));
@@ -26,8 +26,5 @@ public class DataReader {
 	    }     
 	  }    
 	  
-	  public static void main(String args[]) {
-		  DataReader reader=new DataReader("D:/projectnes/workspace2/streaming/src/streaming/source.txt");
-		  reader.read();
-	  }
+	  
 }
