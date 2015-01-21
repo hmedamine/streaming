@@ -1,4 +1,4 @@
-package streaming;
+
 
 import java.io.IOException;
 
@@ -12,9 +12,9 @@ public class ProcessIO {
 	}
 
 	public void processData() throws IOException {
-		writer.openFile();
-		writer.write();
-		writer.closeFile();
+//		writer.openFile();
+//		writer.write();
+//		writer.closeFile();
 		reader.openFile();
 		reader.read();
 		reader.closeFile();
