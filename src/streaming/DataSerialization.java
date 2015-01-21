@@ -1,16 +1,14 @@
 package streaming;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileDataReader implements ReadIo {
+public class DataSerialization implements ReadIo {
 	private String source;
 	private BufferedReader file;
 
-	public FileDataReader(String source) {
+	public DataSerialization(String source) {
 		this.source = source;
 	}
 
@@ -18,7 +16,15 @@ public class FileDataReader implements ReadIo {
 		try {
 			String line;
 			while ((line = file.readLine()) != null) {
-				System.out.println(line);
+				String[] split = line.split(",");
+				Person person = new Person();
+				String firstName = split[0];
+				String lastName = split[1];
+				String date = split[2];
+				person.setFirstName(firstName);
+				person.setLastName(lastName);
+				person.setDate(date);
+				System.out.println(person.toString());
 			}
 
 		} catch (Exception e) {
@@ -46,7 +52,6 @@ public class FileDataReader implements ReadIo {
 
 	@Override
 	public int calculateTotal() throws IOException {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

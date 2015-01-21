@@ -14,7 +14,7 @@ public class FileDataWriter implements WriteIO {
 
 	public void write() {
 		try {
-			file.write("Hello from SQLI");
+			file.write("nom,prenom,date");
 			file.newLine();
 		} catch (Exception e) {
 			e.printStackTrace();
